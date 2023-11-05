@@ -1,0 +1,58 @@
+EXAMPLE 1:
+
+male(john).
+male(james).
+female(mary).
+female(linda).
+parent(john, mary).
+parent(john, james).
+parent(linda, mary).
+parent(linda, james).
+father(X, Y):- male(X), parent(X, Y).
+mother(X, Y):- female(X), parent(X, Y).
+
+Query:
+father(john, mary),
+mother(linda,mary)
+
+
+EXAMPLE 2:
+
+even(X) :- 0 is X mod 2. 
+odd(X) :- 1 is X mod 2.
+
+Query:
+even(6),
+odd(5)
+
+
+EXAMPLE 3:
+
+dog(rottweiler). 
+cat(munchkin). 
+animal(A) :- dog(A).
+
+Query:
+animal(rottweiler)
+
+
+EXAMPLE 4:
+
+max(X, Y, X) :- X >= Y, !.
+max(X, Y, Y) :- X < Y.
+min(X, Y, X) :- X =< Y, !.
+min(X, Y, Y) :- X > Y.
+
+Query:
+max(4, 10, MAX),
+min(4, 10, MIN)
+
+
+EXAMPLE 5:
+
+capital_of(france, paris).
+
+Query:
+capital_of(france, X)
+
+
