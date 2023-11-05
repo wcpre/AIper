@@ -1,0 +1,63 @@
+EXAMPLE 1:
+
+father(john, alice).
+father(john, bob).
+father(bob, carol).
+
+
+Query:
+1) father(john, alice).
+2) father(john, X).
+3) father(john, Y), father(Y, Z).
+4) father(X, alice), father(X, bob).
+
+
+EXAMPLE 2:
+
+employee(john, manager(jane)).
+employee(bob, manager(jane)).
+employee(alice, manager(bill)).
+
+Query:
+1) employee(john, manager(jane)).
+2) employee(bob, manager(X)).
+3) employee(X, manager(jane)).
+4) employee(X, manager(Y)), employee(Y, manager(Z)).
+
+
+EXAMPLE 3:
+
+likes(john, pizza).
+likes(jane, pizza).
+likes(bob, sushi).
+
+Query:
+1) likes(john, pizza).
+2) likes(john, X).
+3) likes(john, pizza), not(likes(jane, pizza)).
+
+
+EXAMPLE 4:
+
+color(red, apple).
+color(yellow, banana).
+color(red, strawberry).
+
+Query:
+1) color(red, apple).
+2) color(X, apple).
+3) color(red, apple), not(color(yellow, apple)).
+
+
+EXAMPLE 5:
+
+mammal(dog).
+mammal(cat).
+reptile(snake).
+
+Query:
+1) mammal(dog).
+2) mammal(Animal).
+3) mammal(dog), not(mammal(snake)).
+
+
