@@ -83,4 +83,25 @@ canget(banana, monkey).
 on(floor, monkey).
 on(floor, monkey).
 
+EXAMPLE 6:
+on(floor, cat).
+on(floor, mouse).
+in(room, cat).
+in(room, mouse).
+in(room, cheese).
+near(cat, mouse).
+chase(cat, mouse):-
+    near(cat, mouse),
+    in(room, cat),
+    in(room, mouse).
+canreach(mouse, cheese):-
+    in(room, mouse),
+    in(room, cheese).
+canget(cheese, mouse):-
+    canreach(mouse, cheese),
+    chase(cat, mouse).
 
+Query:
+chase(cat, mouse).
+canreach(mouse, cheese).
+canget(cheese, mouse).
